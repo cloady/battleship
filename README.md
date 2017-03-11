@@ -1,12 +1,6 @@
-# React + Redux w/ ES6 Starter Project
+# React BattleShip game
 
-**:tada: A Completely updated version of my initial boilerplate :rocket:**
-
-*Note: If you still want to use a previous version, please checkout `old-original-structure` branch.*
-
-A boilerplate using the power and simplicity of React, Redux, Webpack 2 + HMR, and ES6 + JSX via Babel. Includes `Webpack's Tree Shaking` configuration. It's suitable for scalable applications and organized using the custom variation of [the Ducks pattern](https://github.com/nicksp/ducks-modular-redux) — approach when each module's entry file (`feature-name.js`) contains all of its related constants, actions/action creators, selectors and its reducer.
-
-The provided boilerplate is powered by the following technology stack:
+Technology Stack:
 
 - [x] [React](https://facebook.github.io/react/) and [JSX](https://facebook.github.io/jsx/) — a virtual DOM JavaScript library for rendering UI.  It's about rendering view as a function of state, making JavaScript-driven UI declarative the way HTML is declarative.
 - [x] [Redux](http://redux.js.org/) — an incredibly simple way of modelling your data app state, with great community support
