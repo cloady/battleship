@@ -16,7 +16,7 @@ fs.readFile('src/client/assets/index.html', 'utf8', (err, markup) => {
 
   const $ = cheerio.load(markup);
 
-  $('head').append('<link rel="stylesheet" href="/css/app.css">');
+  $('head').append('<link rel="stylesheet" href="css/app.css">');
 
   fs.writeFile('build/client/index.html', $.html(), 'utf8', (err) => {
     if (err) {
