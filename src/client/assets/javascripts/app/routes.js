@@ -6,10 +6,10 @@ import GameView from 'features/game/components/GameView';
 import NotFoundView from 'components/NotFound';
 
 export default (
-  <Route path="/" component={App}>
+  <Route path="/battleship" component={App}>
     <IndexRoute component={GameView} />
     <Route path="404" component={NotFoundView} />
-    <Redirect from="/battleship" to="/" />
+    <Redirect from="/" to="/battleship" />
     <Redirect from="*" to="404" />
   </Route>
 );
