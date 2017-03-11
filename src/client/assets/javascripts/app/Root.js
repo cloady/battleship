@@ -30,7 +30,7 @@ const Root = ({ store, history }) => {
       <Provider store={store}>
         <div>
           <Router history={history} routes={routes} />
-          {!window.devToolsExtension ? <DevTools /> : null}
+          {!window.devToolsExtension ? /*<DevTools />*/ null : null}
         </div>
       </Provider>
     );
