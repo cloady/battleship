@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Game from './Game';
 import Sidebar from './Sidebar';
 
-import './GameApp.scss';
+import './GameLayout.scss';
 
 export default class GameLayout extends Component {
   static propTypes = {
@@ -19,14 +19,14 @@ export default class GameLayout extends Component {
           <div className="content col-xs-12 col-sm-12 col-md-12 col-lg-8">
             <Game
               hitShoots={data.hits}
-              missShoots={data.miss}
+              missShoots={data.misses}
               onCellClick={actions.shootCell}
             />
           </div>
           <Sidebar
-            ships={data.ships}
+            ships={data.layout}
             hits={data.hits}
-            miss={data.miss}
+            misses={data.misses}
           />
         </div>
       </div>

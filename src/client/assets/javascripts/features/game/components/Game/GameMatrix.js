@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { isFunction } from 'lodash';
 import { coordsInArray } from '../../../../utils';
 
+import './Game.scss';
+
 export default class GameMatrix extends Component {
   handleClickCell(i, j) {
     const { onCellClick } = this.props;

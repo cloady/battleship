@@ -9,10 +9,27 @@ import GameLayout from './GameLayout';
   actions: bindActionCreators(gameActions, dispatch)
 }))
 export default class GameView extends Component {
+  state = {
+    isLoading: true
+  };
+
+  componentDidMount() {
+    const { actions } = this.props;
+    actions
+      .getLayout()
+      .then(() => {
+        this.setState({
+          isLoading: false
+        });
+      });
+  }
+
   render() {
+    const { isLoading } = this.state;
+
     return (
       <div>
-        <GameLayout {...this.props} />
+        { !isLoading ? <GameLayout {...this.props} /> : 'Loading...' }
       </div>
     );
   }
