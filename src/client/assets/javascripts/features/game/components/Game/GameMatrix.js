@@ -37,7 +37,7 @@ export default class GameMatrix extends Component {
 
     for(let i=0; i<10; i++) {
       matrix.push(
-        <div key={i} className="row">
+        <div key={i} className="game__row">
           {this.renderRow(i)}
         </div>
       )

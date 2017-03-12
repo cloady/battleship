@@ -5,6 +5,10 @@ import { bindActionCreators } from 'redux';
 import { actionCreators as gameActions, selector } from '../';
 import GameLayout from './GameLayout';
 
+/**
+ * Main Game View component.
+ */
+
 @connect(selector, (dispatch) => ({
   actions: bindActionCreators(gameActions, dispatch)
 }))
