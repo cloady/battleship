@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { isFunction } from 'lodash';
 import { coordsInArray } from '../../../../utils';
+import GameCell from './GameCell';
+import GameRow from './GameRow';
 
 import './Game.scss';
 
