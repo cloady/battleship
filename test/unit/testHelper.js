@@ -8,7 +8,7 @@ import chaiJquery from 'chai-jquery';
 import createHistory from 'react-router/lib/browserHistory';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducers from '../../src/js/reducers';
+import reducers from '../../src/client/assets/javascripts/app/reducer';
 
 // Global prerequisites to make it work in the command line
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
