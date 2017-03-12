@@ -22,7 +22,9 @@
     margin: 20px 0;
 
     .assetInfo__ship {
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       height: 35px;
 
       &.assetInfo__ship-battleship {
