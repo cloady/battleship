@@ -1,3 +1,6 @@
+/**
+ * Game matrix component.
+ */
 import React, { Component } from 'react';
 import { isFunction } from 'lodash';
 import { coordsInArray } from '../../../../utils';
@@ -13,35 +16,31 @@ export default class GameMatrix extends Component {
     isFunction(onCellClick) && onCellClick(i, j);
   }
 
-  renderRow(i) {
+  renderBody() {
     const { hitShoots, missShoots } = this.props;
 
-    let row = [];
-
-    for(let j=0; j<10; j++) {
-      row.push(
-        <div
-          key={j}
-          className="game__cell"
-          onClick={() => this.handleClickCell(i, j)}
-        >
-          {coordsInArray(hitShoots, [i, j]) ? <i className="game__shot game__shot-hit" /> : null}
-          {coordsInArray(missShoots, [i, j]) ? <i className="game__shot game__shot-miss" /> : null}
-        </div>
-      );
-    }
-
-    return row;
-  }
-
-  renderBody() {
     let matrix = [];
 
     for(let i=0; i<10; i++) {
+      let row = [];
+
+      for(let j=0; j<10; j++) {
+        row.push(
+          <GameCell
+            key={j}
+            isHit={coordsInArray(hitShoots, [i, j])}
+            isMiss={coordsInArray(missShoots, [i, j])}
+            xPos={i}
+            yPos={j}
+            onCellClick={(xPos, yPos) => this.handleClickCell(xPos, yPos)}
+          />
+        );
+      }
+
       matrix.push(
-        <div key={i} className="game__row">
-          {this.renderRow(i)}
-        </div>
+        <GameRow key={i}>
+          { row }
+        </GameRow>
       )
     }
 
