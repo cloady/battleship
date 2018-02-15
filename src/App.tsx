@@ -1,12 +1,40 @@
 import * as React from 'react';
-import GameView from './components/GameView';
+import promiseMiddleware from 'redux-promise-middleware';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 
-function App() {
-  return (
-    <div className="page-layout">
-      <GameView />
-    </div>
-  );
+import GameView from './components/GameView';
+import appReducer from './reducers';
+import { IAppState } from './models';
+import { NAME } from './selectors';
+
+import './index.css';
+
+/**
+ * Store interface.
+ */
+interface IStoreState {
+  /** Defined AppState in store. */
+  [NAME]: IAppState;
 }
 
-export default App;
+const store = createStore<IStoreState>(
+  combineReducers({
+    [NAME]: appReducer
+  }),
+  {
+    [NAME]: {
+      hits: [],
+      misses: [],
+      layout: [],
+      shipTypes: {}
+    }
+  },
+  applyMiddleware(promiseMiddleware())
+);
+
+export const App = () => (
+  <Provider store={store}>
+    <GameView />
+  </Provider>
+)
