@@ -37,4 +37,4 @@ export const App = () => (
   <Provider store={store}>
     <GameView />
   </Provider>
-)
+);
