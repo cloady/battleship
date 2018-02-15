@@ -26,20 +26,6 @@ export const initialState: IAppState = {
   'shipTypes': {}
 };
 
-// Reducer
-
-/**
- * Another clever approach of writing reducers:
- *
- * export default function(state = initialState, action) {
- *   const actions = {
- *      [ACTION_TYPE]: () => [action.payload.data, ...state]
- *   };
- *
- *   return (_.isFunction(actions[action.type])) ? actions[action.type]() : state
- * }
- */
-
 /**
  * Application reducer.
  * 
