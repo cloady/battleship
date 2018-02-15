@@ -1,0 +1,43 @@
+/*
+* Sidebar styles
+*/
+.sidebar .playerInfo .playerInfo__display {
+  padding: 1rem;
+  text-align: center; }
+  .sidebar .playerInfo .playerInfo__display.playerInfo__display-1 {
+    background: #ffb000; }
+  .sidebar .playerInfo .playerInfo__display.playerInfo__display-2 {
+    background: #25b79f; }
+
+.sidebar .playerInfo .playerInfo__score {
+  font-size: 2rem; }
+
+.sidebar .assetInfo {
+  margin: 20px 0; }
+  .sidebar .assetInfo .assetInfo__ship {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 35px; }
+    .sidebar .assetInfo .assetInfo__ship.assetInfo__ship-battleship {
+      background-image: url("../../images/Aircraft Shape.png"); }
+    .sidebar .assetInfo .assetInfo__ship.assetInfo__ship-destroyer {
+      background-image: url("../../images/Battleship Shape.png"); }
+    .sidebar .assetInfo .assetInfo__ship.assetInfo__ship-carrier {
+      background-image: url("../../images/Carrier Shape.png"); }
+    .sidebar .assetInfo .assetInfo__ship.assetInfo__ship-cruiser {
+      background-image: url("../../images/Cruiser Shape.png"); }
+    .sidebar .assetInfo .assetInfo__ship.assetInfo__ship-submarine {
+      background-image: url("../../images/Submarine Shape.png"); }
+  .sidebar .assetInfo .assetInfo__stats {
+    padding: 12px; }
+    .sidebar .assetInfo .assetInfo__stats .assetInfo__stat {
+      display: inline-block;
+      background-size: cover;
+      width: 18px;
+      height: 18px;
+      padding: 10px; }
+      .sidebar .assetInfo .assetInfo__stats .assetInfo__stat.assetInfo__stat-miss {
+        background-image: url("../../images/Miss small.png"); }
+      .sidebar .assetInfo .assetInfo__stats .assetInfo__stat.assetInfo__stat-hit {
+        background-image: url("../../images/Hit small.png"); }
