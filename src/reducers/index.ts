@@ -9,7 +9,7 @@ import coordsInArray from '../utils/coordsInArray';
  * Common payload.
  */
 interface IAction extends Action {
-  payload: ICoordsPayload;
+  payload?: ICoordsPayload;
 }
 
 /**
@@ -19,7 +19,7 @@ interface ICoordsPayload {
   coords: Array<Number>;
 }
 
-const initialState: IAppState = {
+export const initialState: IAppState = {
   'hits': [],
   'misses': [],
   'layout': [],
