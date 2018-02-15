@@ -56,7 +56,7 @@ export default function reducer(state: IAppState = initialState, action: IAction
     /** Handle shoot cell action. */
     case `${SHOOT_CELL}_FULFILLED`:
       let { hits, misses, layout } = state;
-      const coords = action.payload.coords;
+      const coords = (action.payload as ICoordsPayload).coords;
 
       const hasCollision = some(layout, ship => {
           const isHit = coordsInArray(ship.positions, coords);
