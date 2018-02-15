@@ -47,7 +47,6 @@ export const initialState: IAppState = {
  * @param {any} action Redux action.
  */
 export default function reducer(state: IAppState = initialState, action: IAction): IAppState {
-  console.log(action);
   switch (action.type) {
     /** Handle get layout action. */
     case `${GET_LAYOUT}_FULFILLED`:
