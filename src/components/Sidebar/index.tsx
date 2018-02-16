@@ -13,10 +13,12 @@ interface IProps {
   misses: Array<Array<Number>>;
   /** List of ships locations. */
   ships: Array<IShipData>;
+  /** List of sinked ships */
+  sinkedShips: Array<IShipData>;
 }
 
 export default (props: IProps) => {
-    const { ships, hits, misses } = props;
+    const { ships, hits, misses, sinkedShips } = props;
 
     /** 
      * Get scores number. 
@@ -39,7 +41,7 @@ export default (props: IProps) => {
           </PlayerInfo>
         </div>
 
-        <ShipAssets ships={ships} hits={hits} />
+        <ShipAssets sinkedShips={sinkedShips} ships={ships} hits={hits} />
       </div>
     </div>
   );

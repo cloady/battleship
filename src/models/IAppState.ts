@@ -13,4 +13,6 @@ export interface IAppState {
   layout: Array<IShipData>;
   /** Ship types list */
   shipTypes: IShipTypes;
+  /** Sinked ship data */
+  sinkedShips: Array<IShipData>;
 }

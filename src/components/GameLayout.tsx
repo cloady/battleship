@@ -27,6 +27,7 @@ export default (props: IProps) => {
           />
         </div>
         <Sidebar
+          sinkedShips={data.sinkedShips}
           ships={data.layout}
           hits={data.hits}
           misses={data.misses}

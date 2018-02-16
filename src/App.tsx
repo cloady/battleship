@@ -27,6 +27,7 @@ const store = createStore<IStoreState>(
       hits: [],
       misses: [],
       layout: [],
+      sinkedShips: [],
       shipTypes: {}
     }
   },

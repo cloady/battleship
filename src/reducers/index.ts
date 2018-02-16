@@ -1,7 +1,7 @@
 import { assign, every, some } from 'lodash';
 import { Action } from 'redux';
 
-import { IAppState } from '../models/IAppState';
+import { IAppState } from '../models';
 import { GET_LAYOUT, SHOOT_CELL } from '../actions';
 import coordsInArray from '../utils/coordsInArray';
 
@@ -23,7 +23,8 @@ export const initialState: IAppState = {
   'hits': [],
   'misses': [],
   'layout': [],
-  'shipTypes': {}
+  'shipTypes': {},
+  'sinkedShips': []
 };
 
 /**
@@ -40,7 +41,7 @@ export default function reducer(state: IAppState = initialState, action: IAction
     
     /** Handle shoot cell action. */
     case `${SHOOT_CELL}_FULFILLED`:
-      let { hits, misses, layout } = state;
+      let { hits, misses, layout, sinkedShips } = state;
       const coords = (action.payload as ICoordsPayload).coords;
 
       const hasCollision = some(layout, ship => {
@@ -50,7 +51,7 @@ export default function reducer(state: IAppState = initialState, action: IAction
             // mutations of hits
             hits = state.hits.concat([coords]);
             if (every(ship.positions, coord => coordsInArray(hits, coord))) {
-              console.log('Ship is sinked');
+              sinkedShips.push(ship);
             }
           }
 
