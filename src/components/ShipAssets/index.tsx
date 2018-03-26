@@ -25,8 +25,8 @@ export default (props: IProps) => {
                                 key={posIndex}
                                 className={
                                     !find(sinkedShips, (sinkedShip) => sinkedShip.ship === ship.ship) ? 
-                                    'miss' : 
-                                    'hit'
+                                    'assetInfo__stat assetInfo__stat-miss' :
+                                    'assetInfo__stat assetInfo__stat-hit'
                                 }
                             />
                         )
